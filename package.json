@@ -29,7 +29,8 @@
 		"@typescript-eslint/parser": "^5.0.0",
 		"eslint": "^8.0.0",
 		"eslint-config-prettier": "^8.0.0",
-		"eslint-plugin-import": "^2.25.4"
+		"eslint-import-resolver-typescript": "^2.5.0",
+		"eslint-plugin-import": "^2.25.0"
 	},
 	"devDependencies": {
 		"@lynxtaa/prettier-config": "^0.1.1",
