@@ -1,5 +1,3 @@
-const esmOverrides = require('./internal/esm-overrides')
-
 module.exports = {
 	extends: [
 		'eslint:recommended',
@@ -57,8 +55,8 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['*.mjs', '*.mts'],
-			...esmOverrides,
+			files: ['*.mjs'],
+			...require('./esm'),
 		},
 		{
 			files: ['*.js'],

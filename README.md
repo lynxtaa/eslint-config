@@ -20,6 +20,6 @@ npm install --save-dev @lynxtaa/eslint-config
 
 ```json
 {
-  "extends": ["@lynxtaa/eslint-config/esm"]
+  "extends": ["@lynxtaa/eslint-config", "@lynxtaa/eslint-config/esm"]
 }
 ```
