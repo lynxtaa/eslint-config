@@ -1,6 +1,6 @@
 {
 	"name": "@lynxtaa/eslint-config",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Shared ESLint configuration",
 	"license": "MIT",
 	"author": "Alex Kondratyuk <lynxtaa@gmail.com>",
