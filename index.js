@@ -58,7 +58,7 @@ module.exports = {
 	overrides: [
 		{
 			files: ['*.mjs', '*.mts'],
-			rules: esmOverrides,
+			...esmOverrides,
 		},
 		{
 			files: ['*.js'],
