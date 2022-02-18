@@ -1,14 +1,11 @@
 module.exports = {
 	extends: [
 		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
 		'plugin:import/errors',
 		'plugin:import/warnings',
-		'plugin:import/typescript',
 		'prettier',
 	],
-	plugins: ['@typescript-eslint', 'import'],
-	parser: '@typescript-eslint/parser',
+	plugins: ['import'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 'latest',
@@ -20,8 +17,6 @@ module.exports = {
 	},
 	rules: {
 		'no-console': 'warn',
-
-		// Plugin import
 		'import/order': [
 			'warn',
 			{ 'alphabetize': { order: 'asc' }, 'newlines-between': 'always' },
@@ -29,27 +24,33 @@ module.exports = {
 		// doesn't work with "exports" field in package.json
 		'import/no-unresolved': 'off',
 		'import/newline-after-import': 'warn',
-
-		// Plugin Typescript
-		'@typescript-eslint/no-explicit-any': 'off',
-		'@typescript-eslint/prefer-optional-chain': 'warn',
-		'@typescript-eslint/explicit-module-boundary-types': [
-			'warn',
-			{ allowArgumentsExplicitlyTypedAsAny: true },
-		],
-		'@typescript-eslint/no-non-null-assertion': 'off',
-		'@typescript-eslint/no-unsafe-assignment': 'off',
 	},
 	overrides: [
 		{
-			files: ['*.mjs'],
-			...require('./esm'),
+			files: ['*.ts?(x)'],
+			extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
+			plugins: ['@typescript-eslint'],
+			parser: '@typescript-eslint/parser',
+			parserOptions: {
+				ecmaVersion: 'latest',
+				sourceType: 'module',
+				ecmaFeatures: { jsx: true },
+				warnOnUnsupportedTypeScriptVersion: true,
+			},
+			rules: {
+				'@typescript-eslint/no-explicit-any': 'off',
+				'@typescript-eslint/prefer-optional-chain': 'warn',
+				'@typescript-eslint/explicit-module-boundary-types': [
+					'warn',
+					{ allowArgumentsExplicitlyTypedAsAny: true },
+				],
+				'@typescript-eslint/no-non-null-assertion': 'off',
+				'@typescript-eslint/no-unsafe-assignment': 'off',
+			},
 		},
 		{
-			files: ['*.js'],
-			rules: {
-				'@typescript-eslint/no-var-requires': 'off',
-			},
+			files: ['*.mjs'],
+			...require('./esm'),
 		},
 		{
 			files: ['*.tsx'],
