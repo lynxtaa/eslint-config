@@ -3,6 +3,7 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:import/errors',
 		'plugin:import/warnings',
+		'plugin:unicorn/recommended',
 		'prettier',
 	],
 	plugins: ['import'],
@@ -24,6 +25,14 @@ module.exports = {
 		// doesn't work with "exports" field in package.json
 		'import/no-unresolved': 'off',
 		'import/newline-after-import': 'warn',
+
+		'unicorn/filename-case': 'off',
+		'unicorn/prevent-abbreviations': 'off',
+		'unicorn/no-array-callback-reference': 'off',
+		'unicorn/catch-error-name': 'off',
+		'unicorn/no-nested-ternary': 'off',
+		'unicorn/no-null': 'off',
+		'unicorn/prefer-module': 'off',
 	},
 	overrides: [
 		{
@@ -49,7 +58,7 @@ module.exports = {
 			},
 		},
 		{
-			files: ['*.mjs'],
+			files: ['*.mjs', '*.mts'],
 			...require('./esm'),
 		},
 		{

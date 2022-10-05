@@ -29,11 +29,12 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"peerDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.0.0",
-		"@typescript-eslint/parser": "^5.0.0",
-		"eslint": "^8.0.0",
-		"eslint-config-prettier": "^8.0.0",
-		"eslint-plugin-import": "^2.25.0"
+		"@typescript-eslint/eslint-plugin": "^5.39.0",
+		"@typescript-eslint/parser": "^5.39.0",
+		"eslint": "^8.24.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-unicorn": "^44.0.1"
 	},
 	"devDependencies": {
 		"@lynxtaa/prettier-config": "^0.1.1",
