@@ -2,31 +2,35 @@
 	"name": "@lynxtaa/eslint-config",
 	"version": "0.3.0",
 	"description": "Shared ESLint configuration",
+	"keywords": [
+		"eslint",
+		"config"
+	],
+	"homepage": "https://github.com/lynxtaa/eslint-config#readme",
+	"repository": "https://github.com/lynxtaa/eslint-config.git",
 	"license": "MIT",
 	"author": "Alex Kondratyuk <lynxtaa@gmail.com>",
-	"repository": "https://github.com/lynxtaa/eslint-config.git",
-	"homepage": "https://github.com/lynxtaa/eslint-config#readme",
 	"main": "index.js",
-	"prettier": "@lynxtaa/prettier-config",
-	"simple-git-hooks": {
-		"pre-commit": "npx pretty-quick --staged"
-	},
-	"np": {
-		"yarn": false
-	},
 	"files": [
 		"esm.js",
 		"index.js",
 		"requires-typechecking.js"
 	],
-	"keywords": [
-		"eslint",
-		"config"
-	],
 	"scripts": {
 		"lint": "eslint *.js",
 		"release": "np --test-script lint",
 		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "npx pretty-quick --staged"
+	},
+	"prettier": "@lynxtaa/prettier-config",
+	"devDependencies": {
+		"@lynxtaa/prettier-config": "^0.1.1",
+		"np": "^7.6.2",
+		"prettier": "^2.7.1",
+		"pretty-quick": "^3.1.3",
+		"simple-git-hooks": "^2.8.0"
 	},
 	"peerDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.39.0",
@@ -36,11 +40,7 @@
 		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-unicorn": "^44.0.1"
 	},
-	"devDependencies": {
-		"@lynxtaa/prettier-config": "^0.1.1",
-		"np": "^7.6.2",
-		"prettier": "^2.7.1",
-		"pretty-quick": "^3.1.3",
-		"simple-git-hooks": "^2.8.0"
+	"np": {
+		"yarn": false
 	}
 }

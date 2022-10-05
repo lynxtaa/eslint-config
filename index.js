@@ -33,6 +33,8 @@ module.exports = {
 		'unicorn/no-nested-ternary': 'off',
 		'unicorn/no-null': 'off',
 		'unicorn/prefer-module': 'off',
+		'unicorn/no-await-expression-member': 'off',
+		'unicorn/switch-case-braces': 'off',
 	},
 	overrides: [
 		{
