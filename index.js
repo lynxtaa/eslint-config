@@ -35,6 +35,9 @@ module.exports = {
 		'unicorn/prefer-module': 'off',
 		'unicorn/no-await-expression-member': 'off',
 		'unicorn/switch-case-braces': 'off',
+		'unicorn/no-useless-undefined': 'off',
+		'unicorn/template-indent': 'off',
+		'unicorn/numeric-separators-style': 'off',
 	},
 	overrides: [
 		{
