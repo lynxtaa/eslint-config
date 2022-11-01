@@ -1,4 +1,5 @@
 module.exports = {
+	reportUnusedDisableDirectives: true,
 	extends: [
 		'eslint:recommended',
 		'plugin:import/errors',
