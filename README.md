@@ -8,12 +8,6 @@ Shared ESLint configuration
 npm install --save-dev @lynxtaa/eslint-config
 ```
 
-Install `peerDependencies` if you're using yarn or older npm versions:
-
-```sh
-npm install --save-dev @typescript-eslint/eslint-plugin@5.39.0 @typescript-eslint/parser@5.39.0 eslint@8.24.0 eslint-config-prettier@8.5.0 eslint-plugin-import@2.26.0 eslint-plugin-unicorn@44.0.1
-```
-
 ## Extend your config
 
 ```json
