@@ -72,7 +72,7 @@ module.exports = {
 		'no-useless-rename': 'error',
 		'no-useless-return': 'warn',
 		'no-var': 'error',
-		'no-void': 'error',
+		'no-void': ['error', { allowAsStatement: true }],
 		'no-with': 'error',
 		'object-shorthand': 'error',
 		'one-var': ['error', 'never'],
@@ -121,6 +121,7 @@ module.exports = {
 			},
 			rules: {
 				'@typescript-eslint/no-explicit-any': 'off',
+				'@typescript-eslint/no-extra-semi': 'off',
 				'@typescript-eslint/prefer-optional-chain': 'warn',
 				'@typescript-eslint/explicit-module-boundary-types': [
 					'warn',
