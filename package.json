@@ -17,7 +17,7 @@
 		"requires-typechecking.js"
 	],
 	"scripts": {
-		"lint": "eslint *.js",
+		"lint": "eslint --max-warnings=0 *.js",
 		"release": "np --test-script lint",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
