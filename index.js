@@ -36,7 +36,6 @@ module.exports = {
 			},
 		],
 		'max-statements-per-line': ['warn', { max: 1 }],
-		'new-cap': 'warn',
 		'no-array-constructor': 'error',
 		'no-async-promise-executor': 'error',
 		'no-console': ['warn', { allow: ['warn', 'error'] }],
