@@ -109,7 +109,11 @@ module.exports = {
 	overrides: [
 		{
 			files: ['*.ts?(x)'],
-			extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
+			extends: [
+				'plugin:import/typescript',
+				'plugin:@typescript-eslint/recommended',
+				'prettier', // again, to disable @typescript-eslint/recommended formatting rules
+			],
 			plugins: ['@typescript-eslint'],
 			parser: '@typescript-eslint/parser',
 			parserOptions: {
