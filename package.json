@@ -1,6 +1,6 @@
 {
 	"name": "@lynxtaa/eslint-config",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"description": "Shared ESLint configuration",
 	"keywords": [
 		"eslint",
@@ -26,8 +26,8 @@
 		"pre-commit": "pnpm exec lint-staged --quiet"
 	},
 	"lint-staged": {
-    "*": "prettier --write --ignore-unknown"
-  },
+		"*": "prettier --write --ignore-unknown"
+	},
 	"prettier": "@lynxtaa/prettier-config",
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
