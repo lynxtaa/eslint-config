@@ -67,7 +67,7 @@ module.exports = {
 		'no-useless-call': 'error',
 		'no-useless-computed-key': 'error',
 		'no-useless-concat': 'error',
-		'no-useless-constructor': 'warn',
+		'no-useless-constructor': 'off',
 		'no-useless-rename': 'error',
 		'no-useless-return': 'warn',
 		'no-var': 'error',
@@ -128,6 +128,7 @@ module.exports = {
 			rules: {
 				'@typescript-eslint/no-explicit-any': 'off',
 				'@typescript-eslint/no-extra-semi': 'off',
+				'@typescript-eslint/no-useless-constructor': 'warn',
 				'@typescript-eslint/prefer-optional-chain': 'warn',
 				'@typescript-eslint/explicit-module-boundary-types': [
 					'warn',
