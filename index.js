@@ -104,6 +104,7 @@ module.exports = {
 		'unicorn/numeric-separators-style': 'off',
 		'unicorn/prefer-module': 'off',
 		'unicorn/prefer-top-level-await': 'off',
+		'unicorn/prefer-type-error': 'off',
 		'unicorn/prevent-abbreviations': 'off',
 		'unicorn/switch-case-braces': 'off',
 		'unicorn/template-indent': 'off',
