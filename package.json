@@ -22,27 +22,24 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepare": "husky"
 	},
-	"lint-staged": {
-		"*": "prettier --write --ignore-unknown"
-	},
 	"prettier": "@lynxtaa/prettier-config",
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^7.7.0",
-		"@typescript-eslint/parser": "^7.7.0",
+		"@typescript-eslint/eslint-plugin": "^7.13.1",
+		"@typescript-eslint/parser": "^7.13.1",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-unicorn": "^52.0.0"
+		"eslint-plugin-unicorn": "^54.0.0"
 	},
 	"devDependencies": {
 		"@lynxtaa/prettier-config": "^0.2.0",
 		"husky": "^9.0.11",
-		"lint-staged": "^15.2.2",
-		"np": "^10.0.3",
-		"prettier": "^3.2.5",
-		"typescript": "^5.4.5"
+		"np": "^10.0.6",
+		"prettier": "^3.3.2",
+		"pretty-quick": "^4.0.0",
+		"typescript": "^5.5.2"
 	},
-	"packageManager": "pnpm@9.0.1",
+	"packageManager": "pnpm@9.4.0",
 	"engines": {
 		"node": ">=18.18.0"
 	},
