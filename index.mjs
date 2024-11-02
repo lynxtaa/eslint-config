@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import esmConfig from './esm.mjs'
+import tseslint from 'typescript-eslint'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -144,26 +145,14 @@ export default [
 		...config,
 		files: ['**/*.ts?(x)'],
 	})),
+	...tseslint.configs.recommended,
 	{
 		files: ['**/*.ts?(x)'],
-		plugins: {
-			'@typescript-eslint': fixupPluginRules(typescriptEslint),
-		},
-		languageOptions: {
-			parser: tsParser,
-			ecmaVersion: 'latest',
-			sourceType: 'module',
-			parserOptions: {
-				ecmaFeatures: { jsx: true },
-				warnOnUnsupportedTypeScriptVersion: true,
-			},
-		},
 		rules: {
 			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-extra-semi': 'off',
 			'@typescript-eslint/no-useless-constructor': 'warn',
 			'@typescript-eslint/prefer-optional-chain': 'warn',
-
 			'@typescript-eslint/explicit-module-boundary-types': [
 				'warn',
 				{ allowArgumentsExplicitlyTypedAsAny: true },
