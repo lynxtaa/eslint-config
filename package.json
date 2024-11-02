@@ -10,12 +10,17 @@
 	"repository": "https://github.com/lynxtaa/eslint-config.git",
 	"license": "MIT",
 	"author": "Alex Kondratiuk <lynxtaa@gmail.com>",
-	"main": "index.js",
+	"type": "module",
 	"files": [
-		"esm.js",
-		"index.js",
-		"requires-typechecking.js"
+		"esm.mjs",
+		"index.mjs",
+		"requires-typechecking.mjs"
 	],
+	"exports": {
+		".": "./index.mjs",
+		"./esm": "./esm.mjs",
+		"./requires-typechecking": "./requires-typechecking.mjs"
+	},
 	"scripts": {
 		"lint": "eslint --max-warnings=0 *.js",
 		"release": "np --no-cleanup --test-script lint",
