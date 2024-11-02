@@ -1,48 +1,22 @@
-import { fixupConfigRules, fixupPluginRules, fixupConfigRules } from '@eslint/compat'
-import eslintPluginImport from 'eslint-plugin-import'
-import globals from 'globals'
-import typescriptEslint from '@typescript-eslint/eslint-plugin'
-import tsParser from '@typescript-eslint/parser'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+// @ts-check
+
 import js from '@eslint/js'
-import { FlatCompat } from '@eslint/eslintrc'
-import esmConfig from './esm.mjs'
+import eslintConfigPrettier from 'eslint-config-prettier'
+// @ts-expect-error no types for now
+import eslintPluginImport from 'eslint-plugin-import'
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
+import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const compat = new FlatCompat({
-	baseDirectory: __dirname,
-	recommendedConfig: js.configs.recommended,
-	allConfig: js.configs.all,
-})
+import esmConfig from './esm.mjs'
 
-export default [
-	...fixupConfigRules(
-		compat.extends(
-			'eslint:recommended',
-			'plugin:import/errors',
-			'plugin:import/warnings',
-			'plugin:unicorn/recommended',
-			'prettier',
-		),
-	),
+export default tseslint.config(
+	js.configs.recommended,
+	eslintPluginImport.flatConfigs.recommended,
+	eslintPluginImport.flatConfigs.errors,
+	eslintPluginImport.flatConfigs.warnings,
+	eslintPluginUnicorn.configs['flat/recommended'],
 	{
-		plugins: {
-			import: fixupPluginRules(eslintPluginImport),
-		},
-		linterOptions: {
-			reportUnusedDisableDirectives: true,
-		},
-		languageOptions: {
-			globals: {
-				...globals.jest,
-				...globals.node,
-			},
-			ecmaVersion: 'latest',
-			sourceType: 'module',
-		},
 		rules: {
 			'dot-notation': 'warn',
 			'eqeqeq': ['warn', 'smart'],
@@ -135,16 +109,7 @@ export default [
 			'yoda': 'error',
 		},
 	},
-	...fixupConfigRules(
-		compat.extends(
-			'plugin:import/typescript',
-			'plugin:@typescript-eslint/recommended',
-			'prettier',
-		),
-	).map(config => ({
-		...config,
-		files: ['**/*.ts?(x)'],
-	})),
+	eslintPluginImport.flatConfigs.typescript,
 	...tseslint.configs.recommended,
 	{
 		files: ['**/*.ts?(x)'],
@@ -172,4 +137,17 @@ export default [
 			'@typescript-eslint/explicit-module-boundary-types': 'off',
 		},
 	},
-]
+	eslintConfigPrettier,
+	{
+		linterOptions: {
+			reportUnusedDisableDirectives: true,
+		},
+		languageOptions: {
+			globals: {
+				...globals.builtin,
+				...globals.jest,
+				...globals.node,
+			},
+		},
+	},
+)

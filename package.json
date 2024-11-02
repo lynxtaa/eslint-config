@@ -22,20 +22,21 @@
 		"./requires-typechecking": "./requires-typechecking.mjs"
 	},
 	"scripts": {
-		"lint": "eslint --max-warnings=0 *.js",
+		"lint": "eslint --max-warnings=0 *.mjs",
 		"release": "np --no-cleanup --test-script lint",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepare": "husky"
 	},
 	"prettier": "@lynxtaa/prettier-config",
 	"dependencies": {
+		"@eslint/js": "^9.14.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "^2.31.0",
 		"eslint-plugin-unicorn": "^56.0.0",
+		"globals": "^15.11.0",
 		"typescript-eslint": "^8.12.2"
 	},
 	"devDependencies": {
-		"@eslint/js": "9.14.0",
 		"@lynxtaa/prettier-config": "^0.2.0",
 		"@types/eslint__js": "8.42.3",
 		"eslint": "^9.14.0",
