@@ -1,6 +1,6 @@
 export default [
 	{
-		files: ['*.ts?(x)', '*.js?(x)', '*.mjs', '*.mts'],
+		files: ['**/*.ts?(x)', '**/*.js?(x)'],
 		rules: {
 			'import/extensions': ['error', 'ignorePackages'],
 			'import/no-useless-path-segments': ['warn', { noUselessIndex: false }],
