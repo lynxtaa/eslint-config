@@ -10,29 +10,38 @@ npm install --save-dev @lynxtaa/eslint-config
 
 ## Extend your config
 
-```json
-{
-  "extends": "@lynxtaa/eslint-config"
-}
+```js
+import eslintConfig from '@lynxtaa/eslint-config'
+
+export default [...eslintConfig]
 ```
 
 ## Extend your config (ES Modules)
 
-```json
-{
-  "extends": ["@lynxtaa/eslint-config", "@lynxtaa/eslint-config/esm"]
-}
+```js
+import eslintConfig from '@lynxtaa/eslint-config'
+import eslintConfigEsm from '@lynxtaa/eslint-config/esm'
+
+export default [...eslintConfig, ...eslintConfigEsm]
 ```
 
 ## Add rules which requires type information
 
 ```js
-module.exports = {
-  extends: ['@lynxtaa/eslint-config', '@lynxtaa/eslint-config/requires-typechecking'],
-  // See https://typescript-eslint.io/docs/linting/typed-linting
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
+import eslintConfig from '@lynxtaa/eslint-config'
+import requiresTypechecking from '@lynxtaa/eslint-config/requires-typechecking'
+
+export default [
+  ...eslintConfig,
+  ...requiresTypechecking,
+  // See https://typescript-eslint.io/getting-started/typed-linting
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
   },
-}
+]
 ```

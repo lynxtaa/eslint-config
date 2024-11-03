@@ -10,36 +10,43 @@
 	"repository": "https://github.com/lynxtaa/eslint-config.git",
 	"license": "MIT",
 	"author": "Alex Kondratiuk <lynxtaa@gmail.com>",
-	"main": "index.js",
+	"type": "module",
 	"files": [
-		"esm.js",
-		"index.js",
-		"requires-typechecking.js"
+		"esm.mjs",
+		"index.mjs",
+		"requires-typechecking.mjs"
 	],
+	"exports": {
+		".": "./index.mjs",
+		"./esm": "./esm.mjs",
+		"./requires-typechecking": "./requires-typechecking.mjs"
+	},
 	"scripts": {
-		"lint": "eslint --max-warnings=0 *.js",
+		"lint": "eslint --max-warnings=0 *.mjs",
 		"release": "np --no-cleanup --test-script lint",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepare": "husky"
 	},
 	"prettier": "@lynxtaa/prettier-config",
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^7.13.1",
-		"@typescript-eslint/parser": "^7.13.1",
-		"eslint": "^8.57.0",
+		"@eslint/js": "^9.14.0",
+		"eslint": "^9.14.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-unicorn": "^54.0.0"
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-unicorn": "^56.0.0",
+		"globals": "^15.11.0",
+		"typescript-eslint": "^8.12.2"
 	},
 	"devDependencies": {
 		"@lynxtaa/prettier-config": "^0.2.0",
-		"husky": "^9.0.11",
-		"np": "^10.0.6",
-		"prettier": "^3.3.2",
+		"@types/eslint__js": "8.42.3",
+		"husky": "^9.1.6",
+		"np": "^10.0.7",
+		"prettier": "^3.3.3",
 		"pretty-quick": "^4.0.0",
-		"typescript": "^5.5.2"
+		"typescript": "^5.6.3"
 	},
-	"packageManager": "pnpm@9.4.0",
+	"packageManager": "pnpm@9.12.3",
 	"engines": {
 		"node": ">=18.18.0"
 	},
