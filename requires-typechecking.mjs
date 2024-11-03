@@ -11,6 +11,7 @@ export default [
 			'@typescript-eslint/no-unsafe-assignment': 'off',
 			'@typescript-eslint/no-unsafe-call': 'off',
 			'@typescript-eslint/no-unsafe-member-access': 'off',
+			'@typescript-eslint/prefer-optional-chain': 'warn',
 			'@typescript-eslint/promise-function-async': 'warn',
 			'@typescript-eslint/require-await': 'off',
 			'@typescript-eslint/strict-boolean-expressions': [

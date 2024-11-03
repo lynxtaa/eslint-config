@@ -117,7 +117,6 @@ export default tseslint.config(
 			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-extra-semi': 'off',
 			'@typescript-eslint/no-useless-constructor': 'warn',
-			'@typescript-eslint/prefer-optional-chain': 'warn',
 			'@typescript-eslint/explicit-module-boundary-types': [
 				'warn',
 				{ allowArgumentsExplicitlyTypedAsAny: true },
