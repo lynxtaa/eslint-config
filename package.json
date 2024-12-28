@@ -29,24 +29,24 @@
 	},
 	"prettier": "@lynxtaa/prettier-config",
 	"dependencies": {
-		"@eslint/js": "^9.14.0",
-		"eslint": "^9.14.0",
+		"@eslint/js": "^9.17.0",
+		"eslint": "^9.17.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "^2.31.0",
-		"eslint-plugin-unicorn": "^56.0.0",
-		"globals": "^15.11.0",
-		"typescript-eslint": "^8.12.2"
+		"eslint-plugin-unicorn": "^56.0.1",
+		"globals": "^15.14.0",
+		"typescript-eslint": "^8.18.2"
 	},
 	"devDependencies": {
 		"@lynxtaa/prettier-config": "^0.2.0",
 		"@types/eslint__js": "8.42.3",
-		"husky": "^9.1.6",
-		"np": "^10.0.7",
-		"prettier": "^3.3.3",
+		"husky": "^9.1.7",
+		"np": "^10.1.0",
+		"prettier": "^3.4.2",
 		"pretty-quick": "^4.0.0",
-		"typescript": "^5.6.3"
+		"typescript": "^5.7.2"
 	},
-	"packageManager": "pnpm@9.12.3",
+	"packageManager": "pnpm@9.15.2",
 	"engines": {
 		"node": ">=18.18.0"
 	},
