@@ -12,6 +12,7 @@ export default tseslint.config(...tseslint.configs.recommendedTypeCheckedOnly, {
 		'@typescript-eslint/prefer-optional-chain': 'warn',
 		'@typescript-eslint/promise-function-async': 'warn',
 		'@typescript-eslint/require-await': 'off',
+		'@typescript-eslint/restrict-template-expressions': ['warn', { allowNullish: false }],
 		'@typescript-eslint/strict-boolean-expressions': [
 			'warn',
 			{
