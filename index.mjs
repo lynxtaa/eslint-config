@@ -91,6 +91,7 @@ export default tseslint.config(
 			'strict': ['error', 'never'],
 			'symbol-description': 'warn',
 			'unicorn/catch-error-name': 'off',
+			'unicorn/consistent-assert': 'off',
 			'unicorn/filename-case': 'off',
 			'unicorn/no-array-callback-reference': 'off',
 			'unicorn/no-await-expression-member': 'off',
