@@ -1,8 +1,8 @@
 // @ts-check
 
-import tseslint, { configs as tsConfigs } from 'typescript-eslint'
+import tseslint from 'typescript-eslint'
 
-export default tseslint.config(...tsConfigs.recommendedTypeCheckedOnly, {
+export default tseslint.config(...tseslint.configs.recommendedTypeCheckedOnly, {
 	files: ['**/*.ts?(x)', '**/*.mts'],
 	rules: {
 		'@typescript-eslint/no-explicit-any': 'off',

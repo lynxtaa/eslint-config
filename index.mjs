@@ -6,7 +6,7 @@ import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescrip
 import { importX } from 'eslint-plugin-import-x'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import tseslint, { configs as tsConfigs } from 'typescript-eslint'
+import tseslint from 'typescript-eslint'
 
 import esmConfig from './esm.mjs'
 
@@ -119,7 +119,7 @@ export default tseslint.config(
 		},
 	},
 	importX.flatConfigs.typescript,
-	...tsConfigs.recommended,
+	...tseslint.configs.recommended,
 	{
 		files: ['**/*.ts?(x)'],
 		rules: {
