@@ -5,7 +5,7 @@ Shared ESLint configuration
 ## Install
 
 ```sh
-npm install --save-dev @lynxtaa/eslint-config
+npm install --save-dev @lynxtaa/eslint-config eslint
 ```
 
 ## Extend your config

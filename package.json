@@ -11,44 +11,46 @@
 	"license": "MIT",
 	"author": "Alex Kondratiuk <lynxtaa@gmail.com>",
 	"type": "module",
-	"files": [
-		"esm.mjs",
-		"index.mjs",
-		"requires-typechecking.mjs"
-	],
 	"exports": {
 		".": "./index.mjs",
 		"./esm": "./esm.mjs",
 		"./requires-typechecking": "./requires-typechecking.mjs"
 	},
+	"files": [
+		"esm.mjs",
+		"index.mjs",
+		"requires-typechecking.mjs"
+	],
 	"scripts": {
 		"lint": "eslint --max-warnings=0 *.mjs",
+		"prepare": "husky",
 		"release": "np --no-cleanup --test-script lint",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"prepare": "husky"
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"prettier": "@lynxtaa/prettier-config",
 	"dependencies": {
-		"@eslint/js": "^9.27.0",
-		"eslint": "^9.27.0",
-		"eslint-config-prettier": "^10.1.5",
+		"@eslint/js": "^9.34.0",
+		"eslint-config-prettier": "^10.1.8",
 		"eslint-import-resolver-typescript": "^4.4.4",
 		"eslint-plugin-import-x": "^4.16.1",
-		"eslint-plugin-unicorn": "^59.0.1",
-		"globals": "^16.2.0",
-		"typescript-eslint": "^8.33.0"
+		"eslint-plugin-unicorn": "^60.0.0",
+		"globals": "^16.3.0",
+		"typescript-eslint": "^8.40.0"
 	},
 	"devDependencies": {
 		"@lynxtaa/prettier-config": "^0.2.0",
 		"husky": "^9.1.7",
 		"np": "^10.2.0",
-		"prettier": "^3.5.3",
-		"pretty-quick": "^4.1.1",
-		"typescript": "^5.8.3"
+		"prettier": "^3.6.2",
+		"pretty-quick": "^4.2.2",
+		"typescript": "^5.9.2"
 	},
-	"packageManager": "pnpm@10.11.0",
+	"peerDependencies": {
+		"eslint": "^9.34.0"
+	},
+	"packageManager": "pnpm@10.15.0",
 	"engines": {
-		"node": ">=18.18.0"
+		"node": ">=20.10.0"
 	},
 	"np": {
 		"yarn": false
