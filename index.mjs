@@ -2,8 +2,8 @@
 
 import js from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
-// @ts-expect-error no types for now
-import eslintPluginImport from 'eslint-plugin-import'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
+import { importX } from 'eslint-plugin-import-x'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
@@ -12,10 +12,15 @@ import esmConfig from './esm.mjs'
 
 export default tseslint.config(
 	js.configs.recommended,
-	eslintPluginImport.flatConfigs.recommended,
-	eslintPluginImport.flatConfigs.errors,
-	eslintPluginImport.flatConfigs.warnings,
-	eslintPluginUnicorn.configs['flat/recommended'],
+	importX.flatConfigs.recommended,
+	importX.flatConfigs.errors,
+	importX.flatConfigs.warnings,
+	{
+		settings: {
+			'import-x/resolver-next': createTypeScriptImportResolver(),
+		},
+	},
+	eslintPluginUnicorn.configs.recommended,
 	{
 		rules: {
 			'dot-notation': 'warn',
@@ -23,10 +28,13 @@ export default tseslint.config(
 			'func-names': ['warn', 'never'],
 			'global-require': 'warn',
 			'guard-for-in': 'error',
-			'import/newline-after-import': 'warn',
-			'import/no-extraneous-dependencies': 'error',
-			'import/no-unresolved': 'off',
-			'import/order': [
+			'import-x/newline-after-import': 'warn',
+			'import-x/no-extraneous-dependencies': 'error',
+			'import-x/no-named-as-default-member': 'off',
+			'import-x/no-named-as-default': 'off',
+			'import-x/no-unresolved': 'off',
+			'import-x/no-rename-default': 'off',
+			'import-x/order': [
 				'warn',
 				{
 					'alphabetize': { order: 'asc' },
@@ -110,7 +118,7 @@ export default tseslint.config(
 			'yoda': 'error',
 		},
 	},
-	eslintPluginImport.flatConfigs.typescript,
+	importX.flatConfigs.typescript,
 	...tseslint.configs.recommended,
 	{
 		files: ['**/*.ts?(x)'],
