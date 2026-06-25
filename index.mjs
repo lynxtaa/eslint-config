@@ -109,6 +109,7 @@ export default tseslint.config(
 			'unicorn/no-process-exit': 'off',
 			'unicorn/no-useless-undefined': 'off',
 			'unicorn/numeric-separators-style': 'off',
+			'unicorn/prefer-await': 'off',
 			'unicorn/prefer-module': 'off',
 			'unicorn/prefer-top-level-await': 'off',
 			'unicorn/prefer-type-error': 'off',
